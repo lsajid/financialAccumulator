@@ -11,13 +11,24 @@ function roundNum(num){
     return Number(num.toFixed(2));
 }
 
+//Q1: why are the key values in "quotations"?
+//Q2: why are there three data sets 
+
 // Find the totalPrice
 function findTotalPrice(trades){
 
+    let totalPrice = 0;
+    for(let i=0; i< trades.length; i++){
+        let num = Number(trades[i].price);
+        totalPrice += roundNum(num);
+    }
+    return roundNum(totalPrice);
 }
+console.log(findTotalPrice(bitcoinTrades));
+
+
 // Find the highestPrice
 function findHighestPrice(trades){
-
 }
 // Find the averagePrice
 function findAveragePrice(trades){
